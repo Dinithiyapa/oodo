@@ -157,7 +157,7 @@
     </template>
     <template id="portal_helpdesk_ticket_page" name="Ticket Portal Template">
         <t t-call="portal.portal_layout">
-            <t t-call="portal.portal_record_layout">
+<!--            <t t-call="portal.portal_record_layout">-->
                 <t t-set="card_header">
                     <div class="row no-gutters">
                         <div class="col-12">
@@ -373,7 +373,7 @@
                         </div>
                     </div>
                 </t>
-            </t>
+<!--            </t>-->
             <div class="mt32">
                 <h4>
                     <strong>Message and communication history</strong>
