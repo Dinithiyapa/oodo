@@ -23,19 +23,18 @@ class HelpdeskTicket(models.Model):
                 ticket.user_id = ticket.team_id.alias_user_id
 
     @api.model
-    def _read_group_stage_ids(self, stages, domain, order):
-        """Show always the stages without team, or stages of the default team."""
+    def _read_group_stage_ids(self, stages, domain, order="sequence"):
         search_domain = [
             "|",
             ("id", "in", stages.ids),
             ("team_ids", "=", False),
         ]
         default_team_id = self.default_get(["team_id"])
-        if default_team_id:
+        if default_team_id.get("team_id"):
             search_domain = [
-                "|",
-                ("team_ids", "=", default_team_id["team_id"]),
-            ] + search_domain
+                                "|",
+                                ("team_ids", "=", default_team_id["team_id"]),
+                            ] + search_domain
         return stages.search(search_domain, order=order)
 
     number = fields.Char(string="Ticket number", default="/", readonly=True)
@@ -46,7 +45,8 @@ class HelpdeskTicket(models.Model):
         string="Assigned user",
         tracking=True,
         index=True,
-        domain="team_id and [('share', '=', False),('id', 'in', user_ids)] or [('share', '=', False)]",  # noqa: B950,E501
+        domain="team_id and [('share', '=', False),('id', 'in', user_ids)] or [('share', '=', False)]",
+        # noqa: B950,E501
     )
     user_ids = fields.Many2many(
         comodel_name="res.users", related="team_id.user_ids", string="Users"
@@ -88,7 +88,7 @@ class HelpdeskTicket(models.Model):
         comodel_name="helpdesk.ticket.channel",
         string="Channel",
         help="Channel indicates where the source of a ticket"
-        "comes from (it could be a phone call, an email...)",
+             "comes from (it could be a phone call, an email...)",
     )
     category_id = fields.Many2one(
         comodel_name="helpdesk.ticket.category",
@@ -164,7 +164,7 @@ class HelpdeskTicket(models.Model):
             # Automatically set default e-mail channel when created from the
             # fetchmail cron task
             if self.env.context.get("fetchmail_cron_running") and not vals.get(
-                "channel_id"
+                    "channel_id"
             ):
                 channel_email_id = self.env.ref(
                     "helpdesk_mgmt.helpdesk_ticket_channel_email",
