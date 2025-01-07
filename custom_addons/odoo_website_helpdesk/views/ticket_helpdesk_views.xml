@@ -139,13 +139,7 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="o_attachment_preview"/>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids"
-                           groups="base.group_user"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
-                </div>
+                <chatter reload_on_follower="True"/>
             </form>
         </field>
     </record>
@@ -177,58 +171,58 @@
                 <field name="kanban_state"/>
                 <progressbar field="kanban_state"
                              colors="{&quot;done&quot;: &quot;success&quot;, &quot;blocked&quot;: &quot;danger&quot;, &quot;normal&quot;: &quot;200&quot;}"/>
-                 <templates>
-                      <t t-name="kanban-menu">
-                          <t t-if="widget.editable">
-                              <a role="menuitem" type="edit"
-                                 class="dropdown-item">Edit
-                              </a>
-                          </t>
-                          <t t-if="widget.deletable">
-                              <a role="menuitem" type="delete"
-                                 class="dropdown-item">Delete
-                              </a>
-                          </t>
-                          <ul class="oe_kanban_colorpicker"
-                              data-field="color"/>
-                      </t>
+                <templates>
+                    <t t-name="kanban-menu">
+                        <t t-if="widget.editable">
+                            <a role="menuitem" type="edit"
+                               class="dropdown-item">Edit
+                            </a>
+                        </t>
+                        <t t-if="widget.deletable">
+                            <a role="menuitem" type="delete"
+                               class="dropdown-item">Delete
+                            </a>
+                        </t>
+                        <ul class="oe_kanban_colorpicker"
+                            data-field="color"/>
+                    </t>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} #{lost_ribbon ? 'oe_kanban_card_ribbon' : ''} oe_kanban_global_click oe_kanban_card d-flex flex-column">
                             <div t-attf-class="o_kanban_card_header">
 
-                                                            <div class="oe_kanban_content">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        <strong>
-                                                                            <field name="name"/>
-                                                                        </strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="text-muted">
-                                                                    <field name="customer_id"/>
-                                                                </div>
-                                                                <div>
-                                                                    <field name="tags_ids" widget="many2many_tags"/>
-                                                                </div>
-                                                                <div class="text-muted"
-                                                                     invisible="team_id==False">
-                                                                    <field name="team_id"/>
-                                                                </div>
-                                                                <div class="o_kanban_record_bottom flex-wrap">
-                                                                    <div class="oe_kanban_bottom_left">
-                                                                        <field name="priority"
-                                                                               widget="priority"/>
-                                                                        <field name="activity_ids"
-                                                                               widget="kanban_activity"/>
-                                                                    </div>
-                                                                    <div class="oe_kanban_bottom_right">
-                                                                        <field name="kanban_state"
-                                                                               widget="state_selection"/>
-                                                                        <field name="user_id"
-                                                                               widget="many2one_avatar_user"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                <div class="oe_kanban_content">
+                                    <div class="row">
+                                        <div class="col">
+                                            <strong>
+                                                <field name="name"/>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted">
+                                        <field name="customer_id"/>
+                                    </div>
+                                    <div>
+                                        <field name="tags_ids" widget="many2many_tags"/>
+                                    </div>
+                                    <div class="text-muted"
+                                         invisible="team_id==False">
+                                        <field name="team_id"/>
+                                    </div>
+                                    <div class="o_kanban_record_bottom flex-wrap">
+                                        <div class="oe_kanban_bottom_left">
+                                            <field name="priority"
+                                                   widget="priority"/>
+                                            <field name="activity_ids"
+                                                   widget="kanban_activity"/>
+                                        </div>
+                                        <div class="oe_kanban_bottom_right">
+                                            <field name="kanban_state"
+                                                   widget="state_selection"/>
+                                            <field name="user_id"
+                                                   widget="many2one_avatar_user"/>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="clearfix"/>
                             </div>
                         </div>
