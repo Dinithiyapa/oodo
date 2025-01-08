@@ -73,7 +73,7 @@ class TicketHelpDesk(models.Model):
     email = fields.Char('Email', help='Email')
     phone = fields.Char('Phone', help='Contact Number')
     team_id = fields.Many2one('team.helpdesk', string='Helpdesk Team',
-                              help='Helpdesk Team Name')
+                              help='Helpdesk Team Name',default=lambda self: self._default_team_id())
     product_ids = fields.Many2many('product.template',
                                    string='Product',
                                    help='Product Name')
@@ -163,6 +163,11 @@ class TicketHelpDesk(models.Model):
         ('normal', 'Ready'),
         ('done', 'In Progress'),
         ('blocked', 'Blocked'), ], default='normal')
+
+    @api.model
+    def _default_team_id(self):
+        """Fetch the first created team.helpdesk record as default."""
+        return self.env['team.helpdesk'].search([], limit=1)
 
     @api.onchange('team_id', 'team_head_id')
     def _onchange_team_id(self):
