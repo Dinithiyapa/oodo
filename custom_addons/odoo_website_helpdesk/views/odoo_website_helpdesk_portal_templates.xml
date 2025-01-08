@@ -119,13 +119,13 @@
                     </t>
                     <t t-set="entries">
                         <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">
-                            <li class="list-group-item d-grid align-content-start">
-                                <a class="btn btn-primary fa fa-download"
-                                   t-attf-href="/my/tickets/download/{{details.id}}"
-                                   target="_blank" style="margin-right: 10px;">
-                                    Download
-                                </a>
-                            </li>
+<!--                            <li class="list-group-item d-grid align-content-start">-->
+<!--                                <a class="btn btn-primary fa fa-download"-->
+<!--                                   t-attf-href="/my/tickets/download/{{details.id}}"-->
+<!--                                   target="_blank" style="margin-right: 10px;">-->
+<!--                                    Download-->
+<!--                                </a>-->
+<!--                            </li>-->
                             <li class="list-group-item d-grid align-content-start" >
                                 <div class="small mb-1">
                                     <strong class="text-muted">Your Contact
