@@ -11228,7 +11228,7 @@ msgstr "boutons de réglage"
 #. module: web
 #. odoo-javascript
 #: code:addons/web/static/src/core/emoji_picker/emoji_data.js:0
-msgid "controller"
+msgid "controllers"
 msgstr "contrôleur"
 
 #. module: web

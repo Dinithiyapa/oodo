@@ -160,7 +160,7 @@ export function makeActionManager(env, router = _router) {
         if (!state?.actionStack?.length) {
             return [];
         }
-        // The last controller will be created by doAction and won't be virtual
+        // The last controllers will be created by doAction and won't be virtual
         const controllers = state.actionStack
             .slice(0, -1)
             .map((actionState, index) => {
@@ -185,7 +185,7 @@ export function makeActionManager(env, router = _router) {
                               .find((a) => a[1].path === actionState.action) ?? [];
                     if (actionRequestKey && clientAction) {
                         if (state.actionStack[index + 1]?.action === actionState.action) {
-                            // client actions don't have multi-record views, so we can't go further to the next controller
+                            // client actions don't have multi-record views, so we can't go further to the next controllers
                             return;
                         }
                         controller.action.tag = actionRequestKey;
@@ -226,7 +226,7 @@ export function makeActionManager(env, router = _router) {
             ]);
 
             // If the current action is a Window action and has a multi-record view, we add the last
-            // controller to the breadcrumb controllers.
+            // controllers to the breadcrumb controllers.
             if (
                 action.type === "ir.actions.act_window" &&
                 action.views.some((view) => view[1] !== "form" && view[1] !== "search")
@@ -237,7 +237,7 @@ export function makeActionManager(env, router = _router) {
             }
 
             // If the current action doesn't have a multi-record view, or is not a Window action,
-            // we don't need to add the last controller to the breadcrumb controllers
+            // we don't need to add the last controllers to the breadcrumb controllers
             return bcControllers;
         }
         return _loadBreadcrumbs(controllers);
@@ -320,7 +320,7 @@ export function makeActionManager(env, router = _router) {
     }
 
     /**
-     * Returns the last controller of the current controller stack.
+     * Returns the last controllers of the current controllers stack.
      *
      * @returns {Controller|null}
      */
@@ -416,7 +416,7 @@ export function makeActionManager(env, router = _router) {
     /**
      * @private
      * @param {string} viewType
-     * @throws {Error} if the current controller is not a view
+     * @throws {Error} if the current controllers is not a view
      * @returns {View | null}
      */
     function _getView(viewType) {
@@ -429,7 +429,7 @@ export function makeActionManager(env, router = _router) {
     }
 
     /**
-     * Given a controller stack, returns the list of breadcrumb items.
+     * Given a controllers stack, returns the list of breadcrumb items.
      *
      * @private
      * @param {ControllerStack} stack
@@ -537,7 +537,7 @@ export function makeActionManager(env, router = _router) {
                 const nextState = { actionStack: actionStack.slice(0, -1) };
                 Object.assign(nextState, nextState.actionStack.at(-1));
                 const params = _getActionParams(nextState);
-                // Place the controller at the found position in the action stack to remove all the
+                // Place the controllers at the found position in the action stack to remove all the
                 // invalid virtual controllers.
                 if (params.options && params.options.index === undefined) {
                     params.options.index = nextState.actionStack.length - 1;
@@ -733,7 +733,7 @@ export function makeActionManager(env, router = _router) {
     }
 
     /**
-     * Computes the position of the controller in the nextStack according to options
+     * Computes the position of the controllers in the nextStack according to options
      * @param {Object} options
      * @param {boolean} [options.clearBreadcrumbs=false]
      * @param {'replaceLast' | 'replaceLastAction'} [options.stackPosition]
@@ -772,7 +772,7 @@ export function makeActionManager(env, router = _router) {
     }
 
     /**
-     * Triggers a re-rendering with respect to the given controller.
+     * Triggers a re-rendering with respect to the given controllers.
      *
      * @private
      * @param {Controller} controller
@@ -866,7 +866,7 @@ export function makeActionManager(env, router = _router) {
             }
             onError(error) {
                 if (this.isMounted) {
-                    // the error occurred on the controller which is
+                    // the error occurred on the controllers which is
                     // already in the DOM, so simply show the error
                     Promise.reject(error);
                     return;
@@ -880,16 +880,16 @@ export function makeActionManager(env, router = _router) {
                 }
                 const index = controllerStack.findIndex((ct) => ct.jsId === controller.jsId);
                 if (index > 0) {
-                    // The error occurred while rendering an existing controller,
-                    // so go back to the previous controller, of the current faulty one.
+                    // The error occurred while rendering an existing controllers,
+                    // so go back to the previous controllers, of the current faulty one.
                     // This occurs when clicking on a breadcrumbs.
                     return restore(controllerStack[index - 1].jsId);
                 }
                 const lastController = controllerStack.at(-1);
                 if (lastController) {
                     if (lastController.jsId !== controller.jsId) {
-                        // the error occurred while rendering a new controller,
-                        // so go back to the last non faulty controller
+                        // the error occurred while rendering a new controllers,
+                        // so go back to the last non faulty controllers
                         // (the error will be shown anyway as the promise
                         // has been rejected)
                         return restore(lastController.jsId);
@@ -920,7 +920,7 @@ export function makeActionManager(env, router = _router) {
                         }
                     };
 
-                    controllerStack = nextStack; // the controller is mounted, commit the new stack
+                    controllerStack = nextStack; // the controllers is mounted, commit the new stack
                     pushState();
                     this.titleService.setParts({ action: controller.displayName });
                     browser.sessionStorage.setItem(
@@ -1430,7 +1430,7 @@ export function makeActionManager(env, router = _router) {
     }
 
     /**
-     * Switches to the given view type in action of the last controller of the
+     * Switches to the given view type in action of the last controllers of the
      * stack. This action must be of type 'ir.actions.act_window'.
      *
      * @param {ViewType} viewType
@@ -1486,9 +1486,9 @@ export function makeActionManager(env, router = _router) {
     }
 
     /**
-     * Restores a controller from the controller stack given its id. Typically,
+     * Restores a controllers from the controllers stack given its id. Typically,
      * this function is called when clicking on the breadcrumbs. If no id is given
-     * restores the previous controller from the stack (penultimate).
+     * restores the previous controllers from the stack (penultimate).
      *
      * @param {string} jsId
      */
@@ -1501,7 +1501,7 @@ export function makeActionManager(env, router = _router) {
             index = controllerStack.findIndex((controller) => controller.jsId === jsId);
         }
         if (index < 0) {
-            const msg = jsId ? "Invalid controller to restore" : "No controller to restore";
+            const msg = jsId ? "Invalid controllers to restore" : "No controllers to restore";
             throw new ControllerNotFoundError(msg);
         }
         const canProceed = await clearUncommittedChanges(env);
@@ -1512,7 +1512,7 @@ export function makeActionManager(env, router = _router) {
         if (controller.virtual) {
             const actionParams = _getActionParams(controller.state);
             if (!actionParams) {
-                throw new Error("Attempted to restore a virtual controller whose state is invalid");
+                throw new Error("Attempted to restore a virtual controllers whose state is invalid");
             }
             const { actionRequest, options } = actionParams;
             options.index = index;
@@ -1522,7 +1522,7 @@ export function makeActionManager(env, router = _router) {
             const { action, exportedState, view, views } = controller;
             const props = { ...controller.props };
             if (exportedState && "resId" in exportedState) {
-                // When restoring, we want to use the last exported ID of the controller
+                // When restoring, we want to use the last exported ID of the controllers
                 props.resId = exportedState.resId;
             }
             Object.assign(controller, _getViewInfo(view, action, views, props));

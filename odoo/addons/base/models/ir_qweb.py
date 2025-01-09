@@ -933,7 +933,7 @@ class IrQWeb(models.AbstractModel):
                 datetime=safe_eval.datetime,
                 relativedelta=relativedelta,
                 image_data_uri=self._get_converted_image_data_uri,
-                # specific 'math' functions to ease rounding in templates and lessen controller marshmalling
+                # specific 'math' functions to ease rounding in templates and lessen controllers marshmalling
                 floor=math.floor,
                 ceil=math.ceil,
                 env=self.env,

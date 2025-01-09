@@ -5,7 +5,7 @@ from odoo import api, fields, models
 
 
 class WebsiteControllerPage(models.Model):
-    _name = 'website.controller.page'
+    _name = 'website.controllers.page'
     _inherits = {'ir.ui.view': 'view_id'}
     _inherit = [
         'website.published.multi.mixin',

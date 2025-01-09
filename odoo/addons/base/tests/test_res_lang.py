@@ -162,6 +162,6 @@ class test_res_lang(TransactionCase):
         # code from 'es_419' to 'es' in the future
         self.assertEqual(es_ES.url_code, 'es_ES')
 
-        # Another special case, /my is reserved to portal controller
+        # Another special case, /my is reserved to portal controllers
         my_MM = ResLang._activate_lang('my_MM')
         self.assertEqual(my_MM.url_code, 'mya')

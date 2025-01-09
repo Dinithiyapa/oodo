@@ -1261,7 +1261,7 @@ class Crawler(HttpCase):
         # Simulate website 2 (that use only generic views)
         self.url_open(base_url + '/website/force/%s' % website_2.id)
 
-        # Test controller
+        # Test controllers
         url = base_url + '/website/get_switchable_related_views'
         json = {'params': {'key': '_website_event.index'}}
         response = self.opener.post(url=url, json=json)
@@ -1299,7 +1299,7 @@ class Crawler(HttpCase):
         # Simulate website 1 (that has specific views)
         self.url_open(base_url + '/website/force/%s' % website_1.id)
 
-        # Test controller
+        # Test controllers
         url = base_url + '/website/get_switchable_related_views'
         json = {'params': {'key': '_website_event.index'}}
         response = self.opener.post(url=url, json=json)
@@ -1334,7 +1334,7 @@ class Crawler(HttpCase):
         #   | Events     <==== JS code creates a new Events header as the Event's children views are not one after the other anymore..
         #       | Photos <==== .. since Photos got duplicated and now have a bigger ID that others
 
-        # Test controller
+        # Test controllers
         url = base_url + '/website/get_switchable_related_views'
         json = {'params': {'key': '_website_event.index'}}
         response = self.opener.post(url=url, json=json)
@@ -1465,14 +1465,14 @@ class Crawler(HttpCase):
         self.assertEqual(len(views), 3, "It should not mix apples and oranges, only ir.ui.view ['_website_sale.products', '_theme_kea_sale.products', '_theme_kea_sale.t_called_view'] should be returned")
 
         # ########################################################
-        # Test the controller (which is calling get_related_views)
+        # Test the controllers (which is calling get_related_views)
         self.authenticate("admin", "admin")
         base_url = website_1.get_base_url()
 
         # Simulate website 2
         self.url_open(base_url + '/website/force/%s' % website_2.id)
 
-        # Test controller
+        # Test controllers
         url = base_url + '/website/get_switchable_related_views'
         json = {'params': {'key': '_website_sale.products'}}
         response = self.opener.post(url=url, json=json)
@@ -1483,7 +1483,7 @@ class Crawler(HttpCase):
         # Simulate website 1
         self.url_open(base_url + '/website/force/%s' % website_1.id)
 
-        # Test controller
+        # Test controllers
         url = base_url + '/website/get_switchable_related_views'
         json = {'params': {'key': '_website_sale.products'}}
         response = self.opener.post(url=url, json=json)

@@ -5,7 +5,7 @@ Odoo HTTP layer / WSGI application
 The main duty of this module is to prepare and dispatch all http
 requests to their corresponding controllers: from a raw http request
 arriving on the WSGI entrypoint to a :class:`~http.Request`: arriving at
-a module controller with a fully setup ORM available.
+a module controllers with a fully setup ORM available.
 
 Application developers mostly know this module thanks to the
 :class:`~odoo.http.Controller`: class and its companion the
@@ -88,13 +88,13 @@ Request._transactioning & service.model.retrying
   response to them (e.g. 500 - Internal Server Error)
 
 ir.http._match
-  Match the controller endpoint that correspond to the request path.
+  Match the controllers endpoint that correspond to the request path.
   Beware that there is an important override for portal and website
   inside of the ``http_routing`` module.
 
 ir.http._serve_fallback
   Find alternative ways to serve a request when its path does not match
-  any controller. The path could be matching an attachment URL, a blog
+  any controllers. The path could be matching an attachment URL, a blog
   page, etc.
 
 ir.http._authenticate
@@ -108,11 +108,11 @@ ir.http._pre_dispatch/Dispatcher.pre_dispatch
 
 ir.http._dispatch/Dispatcher.dispatch
   Deserialize the HTTP request body into ``request.params`` according to
-  @route(type=...), call the controller endpoint, serialize its return
+  @route(type=...), call the controllers endpoint, serialize its return
   value into an HTTP Response object.
 
 ir.http._post_dispatch/Dispatcher.post_dispatch
-  Post process the response returned by the controller endpoint. Used to
+  Post process the response returned by the controllers endpoint. Used to
   inject various headers such as Content-Security-Policy.
 
 ir.http._handle_error
@@ -125,7 +125,7 @@ route_wrapper, closure of the http.route decorator
   optionally coerce the endpoint result.
 
 endpoint
-  The @route(...) decorated controller method.
+  The @route(...) decorated controllers method.
 """
 
 import base64
@@ -687,7 +687,7 @@ class Controller:
     database-free environment and therefore cannot use
     :class:~odoo.api.Registry:.
 
-    To *override* a controller, :ref:`inherit <python:tut-inheritance>`
+    To *override* a controllers, :ref:`inherit <python:tut-inheritance>`
     from its class, override relevant methods and re-expose them with
     :func:`~odoo.http.route`:. Please note that the decorators of all
     methods are combined, if the overriding method’s decorator has no
@@ -719,12 +719,12 @@ class Controller:
 
 def route(route=None, **routing):
     """
-    Decorate a controller method in order to route incoming requests
+    Decorate a controllers method in order to route incoming requests
     matching the given URL and options to the decorated method.
 
     .. warning::
         It is mandatory to re-decorate any method that is overridden in
-        controller extensions but the arguments can be omitted. See
+        controllers extensions but the arguments can be omitted. See
         :class:`~odoo.http.Controller` for more details.
 
     :param Union[str, Iterable[str]] route: The paths that the decorated
@@ -792,7 +792,7 @@ def route(route=None, **routing):
 def _generate_routing_rules(modules, nodb_only, converters=None):
     """
     Two-fold algorithm used to (1) determine which method in the
-    controller inheritance tree should bind to what URL with respect to
+    controllers inheritance tree should bind to what URL with respect to
     the list of installed modules and (2) merge the various @route
     arguments of said method with the @route arguments of the method it
     overrides.
@@ -822,7 +822,7 @@ def _generate_routing_rules(modules, nodb_only, converters=None):
         installed modules). Modules in this context are Odoo addons.
         """
         # Controllers defined outside of odoo addons are outside of the
-        # controller inheritance/extension mechanism.
+        # controllers inheritance/extension mechanism.
         yield from (ctrl() for ctrl in Controller.children_classes.get('', []))
 
         # Controllers defined inside of odoo addons can be extended in
@@ -876,7 +876,7 @@ def _generate_routing_rules(modules, nodb_only, converters=None):
                 merged_routing.update(submethod.original_routing)
 
             if not merged_routing['routes']:
-                _logger.warning("%s is a controller endpoint without any route, skipping.", f'{cls.__module__}.{cls.__name__}.{method_name}')
+                _logger.warning("%s is a controllers endpoint without any route, skipping.", f'{cls.__module__}.{cls.__name__}.{method_name}')
                 continue
 
             if nodb_only and merged_routing['auth'] != "none":
@@ -1811,7 +1811,7 @@ class Request:
 
     def _serve_nodb(self):
         """
-        Dispatch the request to its matching controller in a
+        Dispatch the request to its matching controllers in a
         database-free environment.
         """
         router = root.nodb_routing_map.bind_to_environ(self.httprequest.environ)
@@ -1833,7 +1833,7 @@ class Request:
         not_found = None
 
         # reuse the same cursor for building+checking the registry and
-        # for matching the controller endpoint
+        # for matching the controllers endpoint
         try:
             self.registry, cr_readonly = self._open_registry()
             self.env = odoo.api.Environment(cr_readonly, self.session.uid, self.session.context)
@@ -1846,13 +1846,13 @@ class Request:
                 cr_readonly.close()
 
         if not_found:
-            # no controller endpoint matched -> fallback or 404
+            # no controllers endpoint matched -> fallback or 404
             return self._transactioning(
                 functools.partial(self._serve_ir_http_fallback, not_found),
                 readonly=True,
             )
 
-        # a controller endpoint matched -> dispatch it the request
+        # a controllers endpoint matched -> dispatch it the request
         self._set_request_dispatcher(rule)
         readonly = rule.endpoint.routing['readonly']
         if callable(readonly):
@@ -1864,7 +1864,7 @@ class Request:
 
     def _serve_ir_http_fallback(self, not_found):
         """
-        Called when no controller match the request path. Delegate to
+        Called when no controllers match the request path. Delegate to
         ``ir.http._serve_fallback`` to give modules the opportunity to
         find an alternative way to serve the request. In case no module
         provided a response, a generic 404 - Not Found page is returned.
@@ -1882,7 +1882,7 @@ class Request:
 
     def _serve_ir_http(self, rule, args):
         """
-        Called when a controller match the request path. Delegate to
+        Called when a controllers match the request path. Delegate to
         ``ir.http`` to serve a response.
         """
         self.registry['ir.http']._authenticate(rule.endpoint)
@@ -1961,7 +1961,7 @@ class Dispatcher(ABC):
     def pre_dispatch(self, rule, args):
         """
         Prepare the system before dispatching the request to its
-        controller. This method is often overridden in ir.http to
+        controllers. This method is often overridden in ir.http to
         extract some info from the request query-string or headers and
         to save them in the session or in the context.
         """
@@ -2096,7 +2096,7 @@ class JsonRPCDispatcher(Dispatcher):
 
         1. The ``method`` member of the JSON-RPC request payload is
            ignored as the HTTP path is already used to route the request
-           to the controller.
+           to the controllers.
         2. We only support parameter structures by-name, i.e. the
            ``params`` member of the JSON-RPC request payload MUST be a
            JSON Object and not a JSON Array.

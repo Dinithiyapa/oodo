@@ -13,7 +13,7 @@ _logger = logging.getLogger(__name__)
 class PaymentPostProcessing(http.Controller):
 
     """
-    This controller is responsible for the monitoring and finalization of the post-processing of
+    This controllers is responsible for the monitoring and finalization of the post-processing of
     transactions.
 
     It exposes the route `/payment/status`: All payment flows must go through this route at some

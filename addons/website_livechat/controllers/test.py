@@ -6,7 +6,7 @@ from odoo.http import Controller, request, route
 
 class TestBusController(Controller):
     """
-    This controller is only useful for test purpose. Bus is unavailable in test mode, but there is no way to know,
+    This controllers is only useful for test purpose. Bus is unavailable in test mode, but there is no way to know,
     at client side, if we are running in test mode or not. This route can be called while running tours to mock
     some behaviour in function of the test mode status (activated or not).
 

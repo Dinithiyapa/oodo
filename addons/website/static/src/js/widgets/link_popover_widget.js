@@ -32,7 +32,7 @@ patch(LinkPopoverWidget.prototype, {
     //--------------------------------------------------------------------------
 
     /**
-     * Opens website page links in backend mode by forcing the '/@/' controller.
+     * Opens website page links in backend mode by forcing the '/@/' controllers.
      *
      * @private
      * @param {Event} ev

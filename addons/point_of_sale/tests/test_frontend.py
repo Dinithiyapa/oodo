@@ -538,7 +538,7 @@ class TestUi(TestPointOfSaleHttpCommon):
             'ship_later': True
         })
 
-        # open a session, the /pos/ui controller will redirect to it
+        # open a session, the /pos/ui controllers will redirect to it
         self.main_pos_config.with_user(self.pos_user).open_ui()
 
         # needed because tests are run before the module is marked as

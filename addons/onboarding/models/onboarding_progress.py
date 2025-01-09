@@ -58,7 +58,7 @@ class OnboardingProgress(models.Model):
     def _get_and_update_onboarding_state(self):
         """Fetch the progress of an onboarding for rendering its panel.
 
-        This method is expected to only be called by the onboarding controller.
+        This method is expected to only be called by the onboarding controllers.
         It also has the responsibility of updating the 'just_done' state into
         'done' so that the 'just_done' states are only rendered once.
         """

@@ -171,7 +171,7 @@ class TestAttendee(common.SlidesCase):
 
         self.assertTrue(user_portal_partner in self.channel.channel_partner_all_ids.partner_id)
         self.assertFalse(user_portal_partner.id in self.channel.partner_ids.ids)
-        # Invited partner can join the course and enroll itself. Sudo is used in controller if invited.
+        # Invited partner can join the course and enroll itself. Sudo is used in controllers if invited.
         self.assertTrue(self.channel.with_user(self.user_portal).is_member_invited)
         self.channel.with_user(self.user_portal).sudo()._action_add_members(user_portal_partner)
         self.assertEqual(user_portal_channel_partner.member_status, 'joined')

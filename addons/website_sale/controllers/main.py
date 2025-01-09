@@ -1461,7 +1461,7 @@ class WebsiteSale(payment_portal.PaymentPortal):
     def _create_or_edit_partner(self, partner_details, edit=False, **custom_values):
         """ Create or update a partner
 
-        To create a partner, this controller usually calls `values_preprocess()`, then
+        To create a partner, this controllers usually calls `values_preprocess()`, then
         `checkout_form_validate()`, then `values_postprocess()` and finally `_checkout_form_save()`.
         Since these methods are very specific to the checkout form, this method makes it possible to
         create  a partner for more specific flows like express payment, which does not require all
@@ -1790,7 +1790,7 @@ class WebsiteSale(payment_portal.PaymentPortal):
 
     @route(['/shop/confirmation'], type='http', auth="public", website=True, sitemap=False)
     def shop_payment_confirmation(self, **post):
-        """ End of checkout process controller. Confirmation is basically seing
+        """ End of checkout process controllers. Confirmation is basically seing
         the status of a sale.order. State at this point :
 
          - should not have any context / session info: clean them

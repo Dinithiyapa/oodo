@@ -1217,7 +1217,7 @@ msgstr "Kart, esnek ve genişletilebilir bir içerik kabıdır. Üstbilgiler ve 
 #: model:ir.model.fields,help:website.field_base_automation__website_published
 #: model:ir.model.fields,help:website.field_ir_actions_server__website_published
 #: model:ir.model.fields,help:website.field_ir_cron__website_published
-msgid "A code server action can be executed from the website, using a dedicated controller. The address is <base>/website/action/<website_path>. Set this field as True to allow users to run this action. If it is set to False the action cannot be run through the website."
+msgid "A code server action can be executed from the website, using a dedicated controllers. The address is <base>/website/action/<website_path>. Set this field as True to allow users to run this action. If it is set to False the action cannot be run through the website."
 msgstr "Bir kod sunucusu eylemi, özel bir denetleyiciyi kullanarak web sitesinden yürütülebilir. Adres <base>/website/action/<web sitesi_ yolu> şeklindedir. Kullanıcıların bu işlemi gerçekleştirmesine izin vermek için bu alanı True olarak ayarlayın. False olarak ayarlanırsa, eylem web sitesi aracılığıyla çalıştırılamaz."
 
 #. module: website
@@ -9343,8 +9343,8 @@ msgid ""
 "\n"
 "        301 Moved permanently: The browser will keep in cache the new url.\n"
 "        302 Moved temporarily: The browser will not keep in cache the new url and ask again the next time the new url.\n"
-"        404 Not Found: If you want remove a specific page/controller (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
-"        308 Redirect / Rewrite: If you want rename a controller with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
+"        404 Not Found: If you want remove a specific page/controllers (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
+"        308 Redirect / Rewrite: If you want rename a controllers with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
 "    "
 msgstr ""
 "Yönlendirme türü / Yeniden yazma:\n"

@@ -78,13 +78,13 @@ class Website(Home):
 
     @http.route('/', auth="public", website=True, sitemap=True)
     def index(self, **kw):
-        """ The goal of this controller is to make sure we don't serve a 404 as
+        """ The goal of this controllers is to make sure we don't serve a 404 as
         the website homepage. As this is the website entry point, serving a 404
         is terrible.
         There is multiple fallback mechanism to prevent that:
         - If homepage URL is set (empty by default), serve the website.page
         matching it
-        - If homepage URL is set (empty by default), serve the controller
+        - If homepage URL is set (empty by default), serve the controllers
         matching it
         - If homepage URL is not set, serve the `/` website.page
         - Serve the first accessible menu as last resort. It should be relevant
@@ -105,7 +105,7 @@ class Website(Home):
         if website_page:
             return website_page
 
-        # Check for controller
+        # Check for controllers
         if homepage_url and homepage_url != '/':
             try:
                 rule, args = request.env['ir.http']._match(homepage_url)

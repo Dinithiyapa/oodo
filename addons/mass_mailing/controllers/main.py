@@ -263,7 +263,7 @@ class MassMailController(http.Controller):
         """ Feedback can be given after some actions, notably after opt-outing
         from mailing lists or adding an email in the blocklist.
 
-        This controller tries to write the customer feedback in the most relevant
+        This controllers tries to write the customer feedback in the most relevant
         record. Feedback consists in two parts, the opt-out reason (based on data
         in 'mailing.subscription.optout' model) and the feedback itself (which
         is triggered by the optout reason 'is_feedback' fields).

@@ -12,7 +12,7 @@ import { Component, markup } from "@odoo/owl";
 /**
  * Widget PortalChatter
  *
- * - Fetch message fron controller
+ * - Fetch message fron controllers
  * - Display chatter: pager, total message, composer (according to access right)
  * - Provider API to filter displayed messages
  */

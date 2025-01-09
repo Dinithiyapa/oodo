@@ -160,7 +160,7 @@ class WebsiteMembership(http.Controller):
         }
         return request.render("website_membership.index", values)
 
-    # Do not use semantic controller due to SUPERUSER_ID
+    # Do not use semantic controllers due to SUPERUSER_ID
     @http.route(['/members/<partner_id>'], type='http', auth="public", website=True)
     def partners_detail(self, partner_id, **post):
         current_slug = partner_id

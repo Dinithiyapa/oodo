@@ -186,7 +186,7 @@ class TestIrMailServerSMTPD(TransactionCaseWithUserDemo):
                 'tls_context': ssl_context,
             })
         elif encryption == 'ssl':
-            # for aiosmtpd.controller.InetMixin
+            # for aiosmtpd.controllers.InetMixin
             kwargs['ssl_context'] = ssl_context
         if auth_required:
             kwargs['authenticator'] = _smtp_authenticate

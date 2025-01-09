@@ -32,7 +32,7 @@ class ModelPageController(Controller):
             website.website_domain(),
         ])
 
-        page = request.env["website.controller.page"].search(website_page_domain, limit=1)
+        page = request.env["website.controllers.page"].search(website_page_domain, limit=1)
         if not page:
             raise werkzeug.exceptions.NotFound()
 
@@ -57,7 +57,7 @@ class ModelPageController(Controller):
             if not record.exists() or record_slug != slug(record):
                 raise werkzeug.exceptions.NotFound()
 
-            listing = request.env["website.controller.page"].search(AND([
+            listing = request.env["website.controllers.page"].search(AND([
                 [("name_slugified", "=", page_name_slugified)],
                 [("page_type", "=", "listing")],
                 [("model", "=", target_model_name)],
@@ -82,7 +82,7 @@ class ModelPageController(Controller):
         searches.setdefault("search", "")
         searches.setdefault("order", "create_date desc")
 
-        single_record_pages = request.env["website.controller.page"].search(AND([
+        single_record_pages = request.env["website.controllers.page"].search(AND([
             [("page_type", "=", "single")],
             [("model", "=", target_model_name)],
             website.website_domain(),

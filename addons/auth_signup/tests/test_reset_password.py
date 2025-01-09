@@ -22,7 +22,7 @@ class TestResetPassword(HttpCase):
         """
             Test that first signup link and password reset link are different to accomodate for the different behaviour
             on first signup if a password is already set user is redirected to login page when accessing that link again
-            'signup_email' is used in the web controller (web_auth_reset_password) to detect this behaviour
+            'signup_email' is used in the web controllers (web_auth_reset_password) to detect this behaviour
         """
 
         self.assertEqual(self.test_user.email, url_parse(self.test_user.with_context(create_user=True).signup_url).decode_query()["signup_email"], "query must contain 'signup_email'")

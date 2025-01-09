@@ -15,7 +15,7 @@ from odoo.tools import is_html_empty
 class UserInputSession(http.Controller):
     def _fetch_from_token(self, survey_token):
         """ Check that given survey_token matches a survey 'access_token'.
-        Unlike the regular survey controller, user trying to access the survey must have full access rights! """
+        Unlike the regular survey controllers, user trying to access the survey must have full access rights! """
         return request.env['survey.survey'].search([('access_token', '=', survey_token)])
 
     def _fetch_from_session_code(self, session_code):

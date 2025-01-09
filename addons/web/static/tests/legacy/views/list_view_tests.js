@@ -550,12 +550,12 @@ QUnit.module("Views", (hooks) => {
         assert.containsOnce(
             target,
             ".o_view_controller.o_list_view.myClass",
-            "class attribute should be passed to the view controller"
+            "class attribute should be passed to the view controllers"
         );
         assert.containsOnce(
             target,
             ".myClass",
-            "class attribute should ONLY be passed to the view controller"
+            "class attribute should ONLY be passed to the view controllers"
         );
     });
 

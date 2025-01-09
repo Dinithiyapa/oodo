@@ -1,0 +1,7 @@
+<odoo>
+    <template id="assets" name="Assets" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+
+        </xpath>
+    </template>
+</odoo>

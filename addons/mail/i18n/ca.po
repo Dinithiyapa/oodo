@@ -12541,7 +12541,7 @@ msgstr "controla els botons"
 #. module: mail
 #. odoo-javascript
 #: code:addons/mail/static/src/emoji_picker/emoji_data.js:0
-msgid "controller"
+msgid "controllers"
 msgstr "controlador"
 
 #. module: mail

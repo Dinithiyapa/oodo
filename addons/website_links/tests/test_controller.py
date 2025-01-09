@@ -10,7 +10,7 @@ class TestWebsiteLinksRussian(HttpCase):
     """
     The /r URL prefix is considered as an alias to /ru by the "nearest
     lang" algorithm of our http router (http_routing match). This test
-    suite makes sure that there the link-tracker "/r" controller is not
+    suite makes sure that there the link-tracker "/r" controllers is not
     affected by any (wrong) /ru redirection.
     """
 

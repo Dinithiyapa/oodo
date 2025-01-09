@@ -45,7 +45,7 @@ class TestRedirect(HttpCase):
         r = self.url_open(url)
         self.assertEqual(r.status_code, 200)
         self.assertTrue(r.url.endswith(redirect_url), "Ensure URL got redirected")
-        self.assertTrue(country_ad.name in r.text, "Ensure the controller returned the expected value")
+        self.assertTrue(country_ad.name in r.text, "Ensure the controllers returned the expected value")
         self.assertTrue(redirect_url in r.text, "Ensure the url_for has replaced the href URL in the DOM")
 
         # [Logged In User] Open the original url and check redirect OK
@@ -54,7 +54,7 @@ class TestRedirect(HttpCase):
         self.assertEqual(r.status_code, 200)
         self.assertTrue(r.url.endswith(redirect_url), "Ensure URL got redirected (2)")
         self.assertTrue('Logged In' in r.text, "Ensure logged in")
-        self.assertTrue(country_ad.name in r.text, "Ensure the controller returned the expected value (2)")
+        self.assertTrue(country_ad.name in r.text, "Ensure the controllers returned the expected value (2)")
         self.assertTrue(redirect_url in r.text, "Ensure the url_for has replaced the href URL in the DOM")
 
     @mute_logger('odoo.http')  # mute 403 warning

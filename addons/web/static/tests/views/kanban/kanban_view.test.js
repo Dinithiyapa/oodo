@@ -255,10 +255,10 @@ test("kanban rendering with class and style attributes", async () => {
         message: "style attribute should not be copied",
     });
     expect(".o_view_controller.o_kanban_view.myCustomClass").toHaveCount(1, {
-        message: "class attribute should be passed to the view controller",
+        message: "class attribute should be passed to the view controllers",
     });
     expect(".myCustomClass").toHaveCount(1, {
-        message: "class attribute should ONLY be passed to the view controller",
+        message: "class attribute should ONLY be passed to the view controllers",
     });
 });
 

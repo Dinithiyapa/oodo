@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="upcoming_leaves_template" name="Upcoming Leaves">
+        <t t-call="web.html_container">
+            <div class="container">
+                <h2 class="upcoming-leaves-title">Upcoming Leave Requests</h2>
+                <t t-foreach="docs" t-as="leave">
+                    <div class="leave-card">
+                        <div class="leave-header">
+                            <h3 class="employee-name"><t t-esc="leave['employee_name']"/></h3>
+                        </div>
+                        <div class="leave-details">
+                            <div class="leave-row">
+                                <span class="label">Leave Days:</span>
+                                <span class="value"><t t-esc="leave['leave_days']"/></span>
+                            </div>
+                            <div class="leave-row">
+                                <span class="label">Start Date:</span>
+                                <span class="value"><t t-esc="leave['start_date']"/></span>
+                            </div>
+                            <div class="leave-row">
+                                <span class="label">End Date:</span>
+                                <span class="value"><t t-esc="leave['end_date']"/></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

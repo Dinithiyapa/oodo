@@ -607,7 +607,7 @@
             }).then(function() {
                 if (slide._autoSetDone && !session.is_website_user) {  // no useless RPC call
                     if (slide.category === 'document') {
-                        // only set the slide as completed after iFrame is loaded to avoid concurrent execution with 'embedUrl' controller
+                        // only set the slide as completed after iFrame is loaded to avoid concurrent execution with 'embedUrl' controllers
                         self.el.querySelector('iframe.o_wslides_iframe_viewer').addEventListener('load', () => self._toggleSlideCompleted(slide));
                     } else {
                            return self._toggleSlideCompleted(slide);
