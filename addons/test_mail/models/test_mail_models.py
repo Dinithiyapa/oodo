@@ -242,7 +242,7 @@ class MailTestTicket(models.Model):
                 group_data['has_button_access'] = True
                 group_data['actions'] = [{
                     'url': self._notify_get_action_link(
-                        'controller',
+                        'controllers',
                         controller='/test_mail/do_stuff',
                         **local_msg_vals
                     ),

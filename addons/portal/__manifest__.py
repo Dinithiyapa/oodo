@@ -8,7 +8,7 @@
     'category': 'Hidden',
     'description': """
 This module adds required base code for a fully integrated customer portal.
-It contains the base controller class and base templates. Business addons
+It contains the base controllers class and base templates. Business addons
 will add their specific templates and controllers to extend the customer
 portal.
 

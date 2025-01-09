@@ -1765,7 +1765,7 @@
      * Note: typedefs are auto-exported, so use a made-up `dom` namespace where
      * necessary to avoid duplicates with `export * from './helpers`; see
      * https://github.com/microsoft/TypeScript/issues/46011
-     * @typedef { import('../core/core.controller.js').default } dom.Chart
+     * @typedef { import('../core/core.controllers.js').default } dom.Chart
      * @typedef { import('../../types').ChartEvent } ChartEvent
      */ /**
      * @private

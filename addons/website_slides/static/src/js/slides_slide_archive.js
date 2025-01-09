@@ -23,7 +23,7 @@ publicWidget.registry.websiteSlidesSlideArchive = publicWidget.Widget.extend({
             confirmLabel: _t("Archive"),
             confirm: async () => {
                 /**
-                 * Calls 'archive' on slide controller and then visually removes the slide dom element
+                 * Calls 'archive' on slide controllers and then visually removes the slide dom element
                  */
                 const isArchived = await rpc("/slides/slide/archive", {
                     slide_id: slideId,

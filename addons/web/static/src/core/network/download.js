@@ -466,7 +466,7 @@ downloadFile._download = _download;
 /**
  * Download a file from form or server url
  *
- * This function is meant to call a controller with some data
+ * This function is meant to call a controllers with some data
  * and download the response.
  *
  * Note: the actual implementation is certainly unconventional, but sadly

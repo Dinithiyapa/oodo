@@ -83,7 +83,7 @@ class MailTestLang(models.Model):
             group_options = group[2]
             group_options['has_button_access'] = True
             group_options['actions'] = [
-                {'url': self._notify_get_action_link('controller', controller='/test_mail/do_stuff', **local_msg_vals),
+                {'url': self._notify_get_action_link('controllers', controller='/test_mail/do_stuff', **local_msg_vals),
                  'title': _('NotificationButtonTitle')}
             ]
         return groups

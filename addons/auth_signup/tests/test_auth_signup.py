@@ -46,7 +46,7 @@ class TestAuthSignupFlow(HttpCaseWithUserPortal, HttpCaseWithUserDemo):
 
         # Override unlink to not delete the email if the send works.
         with patch.object(odoo.addons.mail.models.mail_mail.MailMail, 'unlink', lambda self: None):
-            # Call the controller
+            # Call the controllers
             url_free_signup = self._get_free_signup_url()
             self.url_open(url_free_signup, data=payload)
             # Check if an email is sent to the new userw

@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
 
     def write(self, vals):
         """ Synchronize partner from SO to registrations. This is done notably
-        in website_sale controller shop/address that updates customer, but not
+        in website_sale controllers shop/address that updates customer, but not
         only. """
         result = super(SaleOrder, self).write(vals)
         if any(line.service_tracking == 'event' for line in self.order_line) and vals.get('partner_id'):

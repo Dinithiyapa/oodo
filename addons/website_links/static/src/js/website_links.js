@@ -59,7 +59,7 @@ var SelectBox = publicWidget.Widget.extend({
                         // pagination implementation. To make this work, we
                         // display the exact match first though, which requires
                         // an extra RPC (could be refactored into a new
-                        // controller in master but... see TODO).
+                        // controllers in master but... see TODO).
                         // TODO at some point this whole app will be moved as a
                         // backend screen, with real m2o fields etc... in which
                         // case the "exact match" feature should be handled by

@@ -45,7 +45,7 @@ class TestWebsiteControllerPage(HttpCase):
             </t> """
         })
 
-        cls.listing_controller_page = cls.env["website.controller.page"].create({
+        cls.listing_controller_page = cls.env["website.controllers.page"].create({
             "page_name": "Exposed Model",
             "page_type": "listing",
             "view_id": cls.listing_view.id,
@@ -61,7 +61,7 @@ class TestWebsiteControllerPage(HttpCase):
             </t> """
         })
 
-        cls.single_controller_page = cls.env["website.controller.page"].create({
+        cls.single_controller_page = cls.env["website.controllers.page"].create({
             "page_name": "Exposed Model",
             "page_type": "single",
             "website_id": False,
@@ -77,7 +77,7 @@ class TestWebsiteControllerPage(HttpCase):
         self.env["ir.model.access"].search([("model_id", "=", self.model.id)]).perm_read = False
 
         with self.assertRaises(AccessError) as cm:
-            self.env["website.controller.page"].with_user(2).create({
+            self.env["website.controllers.page"].with_user(2).create({
                 "page_name": "Exposed Model",
                 "page_type": "single",
                 "website_id": False,

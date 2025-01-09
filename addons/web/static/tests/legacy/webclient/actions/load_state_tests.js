@@ -292,7 +292,7 @@ QUnit.module("ActionManager", (hooks) => {
         );
         assert.verifySteps(
             [],
-            "No default action was found, no action controller was mounted: pushState not called"
+            "No default action was found, no action controllers was mounted: pushState not called"
         );
     });
 

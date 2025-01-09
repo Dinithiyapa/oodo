@@ -122,7 +122,7 @@ class TestControllerRedirect(TestLangUrl):
 
     def test_01_controller_redirect(self):
         """ Trailing slash URLs should be redirected to non-slash URLs (unless
-            the controller explicitly specifies a trailing slash in the route).
+            the controllers explicitly specifies a trailing slash in the route).
         """
 
         def assertUrlRedirect(url, expected_url, msg="", code=301):
@@ -139,17 +139,17 @@ class TestControllerRedirect(TestLangUrl):
         self.authenticate('admin', 'admin')
 
         # Controllers
-        assertUrlRedirect('/my/', '/my', "Check for basic controller.")
-        assertUrlRedirect('/my/?a=b', '/my?a=b', "Check for basic controller + URL params.")
+        assertUrlRedirect('/my/', '/my', "Check for basic controllers.")
+        assertUrlRedirect('/my/?a=b', '/my?a=b', "Check for basic controllers + URL params.")
         # website.page
         assertUrlRedirect('/page_1/', '/page_1', "Check for website.page.")
         assertUrlRedirect('/page_1/?a=b', '/page_1?a=b', "Check for website.page + URL params.")
 
         # == Same with language ==
         # Controllers
-        assertUrlRedirect('/fr/my/', '/fr/my', "Check for basic controller with language in URL.")
-        assertUrlRedirect('/fr/my/?a=b', '/fr/my?a=b', "Check for basic controller with language in URL + URL params.")
-        # Homepage (which is a controller)
+        assertUrlRedirect('/fr/my/', '/fr/my', "Check for basic controllers with language in URL.")
+        assertUrlRedirect('/fr/my/?a=b', '/fr/my?a=b', "Check for basic controllers with language in URL + URL params.")
+        # Homepage (which is a controllers)
         assertUrlRedirect('/fr/', '/fr', "Check for homepage + language.")
         assertUrlRedirect('/fr/?a=b', '/fr?a=b', "Check for homepage + language + URL params")
         # website.page

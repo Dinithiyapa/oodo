@@ -120,7 +120,7 @@ QUnit.module("Board", (hooks) => {
                 assert.strictEqual(
                     args.context_to_save.fire,
                     "on the bayou",
-                    "The context of a controller should be passed and flattened"
+                    "The context of a controllers should be passed and flattened"
                 );
                 assert.strictEqual(args.action_id, 1, "should save the correct action");
                 assert.strictEqual(args.view_mode, "list", "should save the correct view type");

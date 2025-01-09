@@ -1451,12 +1451,12 @@ msgstr ""
 #: model:ir.model.fields,help:website.field_ir_cron__website_published
 msgid ""
 "A code server action can be executed from the website, using a dedicated "
-"controller. The address is <base>/website/action/<website_path>. Set this "
+"controllers. The address is <base>/website/action/<website_path>. Set this "
 "field as True to allow users to run this action. If it is set to False the "
 "action cannot be run through the website."
 msgstr ""
 "Un'azione server di codice può essere eseguita dal sito web con un "
-"controller. L'indirizzo è <base>/website/action/<website_path>. Impostare il"
+"controllers. L'indirizzo è <base>/website/action/<website_path>. Impostare il"
 " valore di questo campo a Vero per consentire agli utenti di eseguire "
 "un'azione. Se questo campo è impostato a Falso, l'azione non può essere "
 "eseguita tramite il sito web."
@@ -3439,7 +3439,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:website.field_website_controller_page__controller_page_ids
 #: model:ir.model.fields,field_description:website.field_website_page__controller_page_ids
 msgid "Controller Page"
-msgstr "Pagina controller"
+msgstr "Pagina controllers"
 
 #. module: website
 #. odoo-javascript
@@ -5018,7 +5018,7 @@ msgstr ""
 #. module: website
 #: model:ir.model,name:website.model_ir_binary
 msgid "File streaming helper model for controllers"
-msgstr "Modello di aiuto streaming file per controller"
+msgstr "Modello di aiuto streaming file per controllers"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_product_catalog
@@ -11764,16 +11764,16 @@ msgid ""
 "\n"
 "        301 Moved permanently: The browser will keep in cache the new url.\n"
 "        302 Moved temporarily: The browser will not keep in cache the new url and ask again the next time the new url.\n"
-"        404 Not Found: If you want remove a specific page/controller (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
-"        308 Redirect / Rewrite: If you want rename a controller with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
+"        404 Not Found: If you want remove a specific page/controllers (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
+"        308 Redirect / Rewrite: If you want rename a controllers with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
 "    "
 msgstr ""
 "Tipo di reindirizzamento/riscrittura:\n"
 "\n"
 "        301 - Trasferimento permanente: il browser mantiene in cache il nuovo URL.\n"
 "        302 - Trasferimento temporaneo: il browser non mantiene in cache il nuovo URL, che viene chiesto nuovamente la volta successiva.\n"
-"        404 - Non trovato: serve a rimuovere una pagina/controller specifica (es. e-commerce installato ma /shop non visualizzato in un particolare sito web)\n"
-"        308 - Reindirizzamento / Riscrittura: serve a rinominare un controller con un nuovo URL. (Es.: /shop → /garden - Entrambi gli URL sono accessibili ma /shop viene reindirizzato automaticamente a /garden)\n"
+"        404 - Non trovato: serve a rimuovere una pagina/controllers specifica (es. e-commerce installato ma /shop non visualizzato in un particolare sito web)\n"
+"        308 - Reindirizzamento / Riscrittura: serve a rinominare un controllers con un nuovo URL. (Es.: /shop → /garden - Entrambi gli URL sono accessibili ma /shop viene reindirizzato automaticamente a /garden)\n"
 "    "
 
 #. module: website

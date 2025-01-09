@@ -3360,7 +3360,7 @@ options.registry.ConditionalVisibility = options.registry.DeviceVisibility.exten
      * Stores them in data-attributes to then be reapplied by
      * content/inject_dom.js (ideally we should saved them in a <style> tag
      * directly but that would require a new website.page field and would not
-     * be possible in dynamic (controller) pages... maybe some day).
+     * be possible in dynamic (controllers) pages... maybe some day).
      *
      * @private
      */

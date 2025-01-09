@@ -1140,7 +1140,7 @@ msgstr "Et kort er en fleksibel og utvidbar innholdsbeholder. Det inkluderer alt
 #: model:ir.model.fields,help:website.field_base_automation__website_published
 #: model:ir.model.fields,help:website.field_ir_actions_server__website_published
 #: model:ir.model.fields,help:website.field_ir_cron__website_published
-msgid "A code server action can be executed from the website, using a dedicated controller. The address is <base>/website/action/<website_path>. Set this field as True to allow users to run this action. If it is set to False the action cannot be run through the website."
+msgid "A code server action can be executed from the website, using a dedicated controllers. The address is <base>/website/action/<website_path>. Set this field as True to allow users to run this action. If it is set to False the action cannot be run through the website."
 msgstr "En kodet tjenerhandling kan kjøres fra nettsiden ved å bruke en dedikert kontroller. Adressen er <base>/website/action/<website_path>. Sett dette feltet til Sann for å tillate brukere å kjøre denne handlingen. Hvis satt til Usann, kan handlingen ikke kjøres fra nettsiden."
 
 #. module: website
@@ -9223,8 +9223,8 @@ msgid ""
 "\n"
 "        301 Moved permanently: The browser will keep in cache the new url.\n"
 "        302 Moved temporarily: The browser will not keep in cache the new url and ask again the next time the new url.\n"
-"        404 Not Found: If you want remove a specific page/controller (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
-"        308 Redirect / Rewrite: If you want rename a controller with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
+"        404 Not Found: If you want remove a specific page/controllers (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
+"        308 Redirect / Rewrite: If you want rename a controllers with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
 "    "
 msgstr ""
 "Type omdirigering/omskriving:\n"

@@ -8076,7 +8076,7 @@ test(`reload event is handled only once`, async () => {
     // In this test, several form controllers are nested (all of them are
     // opened in dialogs). When the users clicks on save in the last
     // opened dialog, a 'reload' event is triggered up to reload the (direct)
-    // parent view. If this event isn't stopPropagated by the first controller
+    // parent view. If this event isn't stopPropagated by the first controllers
     // catching it, it will crash when the other one will try to handle it,
     // as this one doesn't know at all the dataPointID to reload.
     Partner._views = {

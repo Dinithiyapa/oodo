@@ -750,7 +750,7 @@
     <!--
         Generic chatter template for the frontend
         This template provide the container of the chatter. The rest is done in js.
-        To use this template, you need to call it after setting the following variable in your template or in your controller:
+        To use this template, you need to call it after setting the following variable in your template or in your controllers:
             :object browserecord : the mail_thread object
             :message_per_page int (optional): number of message per chatter page
             :token string (optional): if you want your chatter to be available for non-logged user,

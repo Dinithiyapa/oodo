@@ -45,7 +45,7 @@ class MailController(http.Controller):
 
     @classmethod
     def _redirect_to_record(cls, model, res_id, access_token=None, **kwargs):
-        # access_token and kwargs are used in the portal controller override for the Send by email or Share Link
+        # access_token and kwargs are used in the portal controllers override for the Send by email or Share Link
         # to give access to the record to a recipient that has normally no access.
         uid = request.session.uid
         user = request.env['res.users'].sudo().browse(uid)

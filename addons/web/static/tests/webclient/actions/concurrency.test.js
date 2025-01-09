@@ -205,7 +205,7 @@ test.tags("desktop")("clicking quickly on breadcrumbs...", async () => {
     expect(queryAllTexts(".breadcrumb-item, .o_breadcrumb .active")).toEqual(["Partners Action 4"]);
 });
 
-test.tags("desktop")("execute a new action while loading a lazy-loaded controller", async () => {
+test.tags("desktop")("execute a new action while loading a lazy-loaded controllers", async () => {
     redirect("/odoo/action-4/2?cids=1");
 
     let def;
@@ -303,9 +303,9 @@ test.tags("desktop")("execute a new action while handling a call_button", async 
     expect.verifySteps([]);
 });
 
-test.tags("desktop")("execute a new action while switching to another controller", async () => {
+test.tags("desktop")("execute a new action while switching to another controllers", async () => {
     // This test's bottom line is that a doAction always has priority
-    // over a switch controller (clicking on a record row to go to form view).
+    // over a switch controllers (clicking on a record row to go to form view).
     // In general, the last actionManager's operation has priority because we want
     // to allow the user to make mistakes, or to rapidly reconsider her next action.
     // Here we assert that the actionManager's RPC are in order, but a 'read' operation
@@ -486,7 +486,7 @@ test("properly drop client actions after new action is initiated", async () => {
 });
 
 test.tags("desktop")(
-    "restoring a controller when doing an action -- load_action slow",
+    "restoring a controllers when doing an action -- load_action slow",
     async () => {
         let def;
         onRpc("/web/action/load", () => def);

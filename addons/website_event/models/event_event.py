@@ -656,7 +656,7 @@ class Event(models.Model):
             'fetch_fields': fetch_fields,
             'mapping': mapping,
             'icon': 'fa-ticket',
-            # for website_event main controller:
+            # for website_event main controllers:
             'dates': dates,
             'current_date': current_date,
             'search_tags': search_tags,

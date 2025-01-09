@@ -833,7 +833,7 @@ class PaymentTransaction(models.Model):
 
     def _cron_post_process(self):
         """ Trigger the post-processing of the transactions that were not handled by the client in
-        the `poll_status` controller method.
+        the `poll_status` controllers method.
 
         :return: None
         """

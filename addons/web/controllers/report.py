@@ -93,7 +93,7 @@ class ReportController(http.Controller):
     # pylint: disable=unused-argument
     def report_download(self, data, context=None, token=None, readonly=True):
         """This function is used by 'action_manager_report.js' in order to trigger the download of
-        a pdf/controller report.
+        a pdf/controllers report.
 
         :param data: a javascript array JSON.stringified containg report internal url ([0]) and
         type [1]

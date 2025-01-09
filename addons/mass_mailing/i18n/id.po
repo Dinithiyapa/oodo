@@ -2440,7 +2440,7 @@ msgid ""
 msgstr ""
 "ID mail_mail terkait. Field ini adalah field integer karena mail_mail "
 "terkait dapat dihapus terpisah dari statistiknya. Namun ID dibutuhkan untuk "
-"beberapa action dan controller."
+"beberapa action dan controllers."
 
 #. module: mass_mailing
 #: model:ir.model.fields,field_description:mass_mailing.field_mailing_mailing__activity_exception_icon

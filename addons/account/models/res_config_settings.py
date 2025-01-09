@@ -286,7 +286,7 @@ class ResConfigSettings(models.TransientModel):
     def _compute_terms_preview(self):
         for setting in self:
             # We display the preview button only if the terms_type is html in the setting but also on the company
-            # to avoid landing on an error page (see terms.py controller)
+            # to avoid landing on an error page (see terms.py controllers)
             setting.preview_ready = self.env.company.terms_type == 'html' and setting.terms_type == 'html'
 
     def action_update_terms(self):
