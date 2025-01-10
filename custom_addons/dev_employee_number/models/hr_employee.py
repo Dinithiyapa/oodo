@@ -44,8 +44,8 @@ class hr_employee(models.Model):
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
 # Define the _post_init_hook outside the class
-def _post_init_hook(cr, registry):
-    """Automatically update missing sequences after module installation."""
-    from odoo.api import Environment, SUPERUSER_ID
-    env = Environment(cr, SUPERUSER_ID, {})
-    env['hr.employee'].update_missing_sequences()
+# def _post_init_hook(cr, registry):
+#     """Automatically update missing sequences after module installation."""
+#     from odoo.api import Environment, SUPERUSER_ID
+#     env = Environment(cr, SUPERUSER_ID, {})
+#     env['hr.employee'].update_missing_sequences()
