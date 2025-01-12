@@ -34,14 +34,14 @@ Automated sequence assignment ensures efficiency and accuracy in employee record
     'installable': True,
     'application': True,
     'auto_install': False,
-    'post_init_hook': '_post_init_hook',
+    # 'post_init_hook': '_post_init_hook',
 
     #author and support Details ==========#
     'author': 'DevIntelle Consulting Service Pvt.Ltd',
     'website': 'http://www.devintellecs.com',    
     'maintainer': 'DevIntelle Consulting Service Pvt.Ltd', 
     'support': 'devintelle@gmail.com',
-    'pre_init_hook' :'pre_init_check',
+    # 'pre_init_hook' :'pre_init_check',
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
