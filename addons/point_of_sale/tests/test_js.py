@@ -18,7 +18,7 @@ class WebSuite(HttpCase):
         })
 
     def test_pos_js(self):
-        # open a session, the /pos/ui controllers will redirect to it
+        # open a session, the /pos/ui controller will redirect to it
         # TODO: Adapt to work without demo data
         if not loaded_demo_data(self.env):
             _logger.warning("This test relies on demo data. To be rewritten independently of demo data for accurate and reliable results.")

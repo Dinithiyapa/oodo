@@ -34,7 +34,7 @@ class IrAttachment(models.Model):
                 raise UserError(_("The attachment %s does not exist or you do not have the rights to access it.", attachment.id))
 
     def _post_add_create(self, **kwargs):
-        """ Overrides behaviour when the attachment is created through the controllers
+        """ Overrides behaviour when the attachment is created through the controller
         """
         super(IrAttachment, self)._post_add_create(**kwargs)
         for record in self:

@@ -9,7 +9,7 @@ options.registry.WebsiteControllerPageListingLayout = options.Class.extend({
     init() {
         this._super(...arguments);
         this.orm = this.bindService("orm");
-        this.resModel = "website.controllers.page";
+        this.resModel = "website.controller.page";
     },
 
     /**

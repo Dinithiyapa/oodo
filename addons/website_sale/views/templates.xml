@@ -1752,7 +1752,7 @@
         -->
         <!-- Checkout context:
             - website_sale_order: The current order.
-            - xmlid: The id of the xml templated rendered by the controllers.
+            - xmlid: The id of the xml templated rendered by the controller.
         -->
         <t t-set="step_specific_values" t-value="website._get_checkout_steps(xmlid)"/>
         <div t-attf-class="#{_container_classes} d-flex #{_form_send_navigation and 'flex-column flex-lg-row align-items-lg-center' or 'flex-column'} pt-4">

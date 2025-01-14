@@ -4034,8 +4034,8 @@ class MailThread(models.AbstractModel):
 
         if link_type in ['view', 'assign', 'follow', 'unfollow']:
             base_link = '/mail/%s' % link_type
-        elif link_type == 'controllers':
-            controller = kwargs.get('controllers')
+        elif link_type == 'controller':
+            controller = kwargs.get('controller')
             params.pop('model')
             base_link = '%s' % controller
         else:

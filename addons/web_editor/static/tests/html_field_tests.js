@@ -526,7 +526,7 @@ QUnit.module("WebEditor.HtmlField", ({ beforeEach }) => {
         });
 
         let formController;
-        // Patch to get the controllers instance.
+        // Patch to get the controller instance.
         patchWithCleanup(FormController.prototype, {
             setup() {
                 super.setup(...arguments);

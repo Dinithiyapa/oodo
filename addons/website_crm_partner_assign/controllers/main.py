@@ -350,7 +350,7 @@ class WebsiteCrmPartnerAssign(WebsitePartnerPage, GoogleMap):
         return request.render("website_crm_partner_assign.index", values, status=partners and 200 or 404)
 
 
-    # Do not use semantic controllers due to sudo()
+    # Do not use semantic controller due to sudo()
     @http.route()
     def partners_detail(self, partner_id, **post):
         current_slug = partner_id

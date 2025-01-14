@@ -18,7 +18,7 @@ class ServerAction(models.Model):
     website_url = fields.Char('Website Url', compute='_get_website_url', help='The full URL to access the server action through the website.')
     website_published = fields.Boolean('Available on the Website', copy=False,
                                        help='A code server action can be executed from the website, using a dedicated '
-                                            'controllers. The address is <base>/website/action/<website_path>. '
+                                            'controller. The address is <base>/website/action/<website_path>. '
                                             'Set this field as True to allow users to run this action. If it '
                                             'is set to False the action cannot be run through the website.')
 

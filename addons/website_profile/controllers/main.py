@@ -135,7 +135,7 @@ class WebsiteProfile(http.Controller):
             image = kwargs.get('ufile').read()
             values['image_1920'] = base64.b64encode(image)
 
-        if request.uid == user.id:  # the controllers allows to edit only its own privacy settings; use partner management for other cases
+        if request.uid == user.id:  # the controller allows to edit only its own privacy settings; use partner management for other cases
             values['website_published'] = kwargs.get('website_published') == 'True'
         return values
 

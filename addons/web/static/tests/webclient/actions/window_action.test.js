@@ -786,7 +786,7 @@ test.tags("desktop")('reverse breadcrumb works on accesskey "b"', async () => {
     });
 });
 
-test.tags("desktop")("reload previous controllers when discarding a new record", async () => {
+test.tags("desktop")("reload previous controller when discarding a new record", async () => {
     stepAllNetworkCalls();
     await mountWithCleanup(WebClient);
     await getService("action").doAction(3);
@@ -1310,7 +1310,7 @@ test.tags("desktop")('save when leaving a "dirty" view', async () => {
     expect(".o_kanban_view").toHaveCount(1, { message: "should be in kanban view" });
 });
 
-test.tags("desktop")("limit set in action is passed to each created controllers", async () => {
+test.tags("desktop")("limit set in action is passed to each created controller", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction({
         name: "Partners",
@@ -1756,7 +1756,7 @@ test.tags("desktop")(
     }
 );
 
-test.tags("desktop")("destroy action with lazy loaded controllers", async () => {
+test.tags("desktop")("destroy action with lazy loaded controller", async () => {
     redirect("/web#action=3&id=2&view_type=form");
 
     await mountWithCleanup(WebClient);

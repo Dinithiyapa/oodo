@@ -11,7 +11,7 @@ class TestMailingListSms(HttpCase, MassSMSCommon):
 
     @users('user_marketing')
     def test_controller_unsubscribe(self):
-        """ Test unsubscribe controllers from a phone number, including phone
+        """ Test unsubscribe controller from a phone number, including phone
         formatting and validation """
         partner = self.env['res.partner'].create({
             'name': 'Test Partner',

@@ -97,7 +97,7 @@ class PaypalController(http.Controller):
            validation was a success, the notification data are appended to the response text as a
            string formatted as follows: 'SUCCESS\nparam1=value1\nparam2=value2\n...'
         3. Extract the notification data and process these instead of the PDT.
-        4. Return an empty HTTP 200 response (done at the end of the route controllers).
+        4. Return an empty HTTP 200 response (done at the end of the route controller).
 
         See https://developer.paypal.com/docs/api-basics/notifications/payment-data-transfer/.
 

@@ -43,7 +43,7 @@ class Menu(models.Model):
     name = fields.Char('Menu', required=True, translate=True)
     url = fields.Char('Url', default='')
     page_id = fields.Many2one('website.page', 'Related Page', ondelete='cascade')
-    controller_page_id = fields.Many2one('website.controllers.page', 'Related Model Page', ondelete='cascade')
+    controller_page_id = fields.Many2one('website.controller.page', 'Related Model Page', ondelete='cascade')
     new_window = fields.Boolean('New Window')
     sequence = fields.Integer(default=_default_sequence)
     website_id = fields.Many2one('website', 'Website', ondelete='cascade')
@@ -304,7 +304,7 @@ class Menu(models.Model):
                         menu['parent_id'] = int(menu['parent_id'])
                 elif menu_id.page_id:
                     try:
-                        # a page shouldn't have the same url as a controllers
+                        # a page shouldn't have the same url as a controller
                         self.env['ir.http']._match(menu['url'])
                         menu_id.page_id = None
                     except werkzeug.exceptions.NotFound:

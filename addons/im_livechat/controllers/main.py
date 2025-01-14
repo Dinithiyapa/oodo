@@ -32,7 +32,7 @@ class LivechatController(http.Controller):
     @http.route('/im_livechat/assets_embed.<any(css, js):ext>', type='http', auth='public', cors='*')
     def assets_embed(self, ext, **kwargs):
         # If the request comes from a different origin, we must provide the CORS
-        # assets to enable the redirection of routes to the CORS controllers.
+        # assets to enable the redirection of routes to the CORS controller.
         headers = request.httprequest.headers
         origin_url = urlsplit(headers.get('referer'))
         bundle = 'im_livechat.assets_embed_external'

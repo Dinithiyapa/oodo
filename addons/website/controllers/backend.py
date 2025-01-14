@@ -45,7 +45,7 @@ class WebsiteBackend(http.Controller):
         to do this. This route is only here to ensure that the "New Content"
         modal displays the correct elements for each user, and there might be
         a way to do it with the framework rather than having a dedicated
-        controllers route. (maybe by using a template or a JS util)
+        controller route. (maybe by using a template or a JS util)
         """
         if not request.env.user.has_group('website.group_website_restricted_editor'):
             raise werkzeug.exceptions.Forbidden()

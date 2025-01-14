@@ -343,7 +343,7 @@ class WithContext(HttpCase):
         self.assertEqual(
             r.url, home_url_full, """URL should still be '/', note that if this
             `assert` fail, the loaded URL will probably be the first available
-            menu different from '/', see homepage controllers.""")
+            menu different from '/', see homepage controller.""")
         self.assertIn(b"HomepageUrlTest", r.content)
 
         # Side test: ensure `slugify` and `get_unique_path` changes are
@@ -447,7 +447,7 @@ class WithContext(HttpCase):
         self.assertEqual(r.url, contactus_url_full)
         self.assertIn(contactus_content, r.content)
 
-        # Case 5: Check controllers redirect and make sure it is a reroute
+        # Case 5: Check controller redirect and make sure it is a reroute
         website.homepage_url = '/website/info'
         # -------------------------------------------
         # / page exists | first menu  |  homepage_url
@@ -459,7 +459,7 @@ class WithContext(HttpCase):
         self.assertEqual(r.url, home_url_full)
         self.assertIn(b'o_website_info', r.content)
 
-        # Case 6: Check controllers redirect which has different `auth` method
+        # Case 6: Check controller redirect which has different `auth` method
         website.homepage_url = '/my'
         # -------------------------------------------
         # / page exists | first menu  |  homepage_url

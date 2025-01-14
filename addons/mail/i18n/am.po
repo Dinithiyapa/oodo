@@ -12452,7 +12452,7 @@ msgstr ""
 #. module: mail
 #. odoo-javascript
 #: code:addons/mail/static/src/emoji_picker/emoji_data.js:0
-msgid "controllers"
+msgid "controller"
 msgstr ""
 
 #. module: mail

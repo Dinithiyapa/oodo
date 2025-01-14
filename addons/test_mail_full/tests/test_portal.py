@@ -129,7 +129,7 @@ class TestPortalControllers(TestPortal):
         self.assertRegex(placeholder_response.headers.get('Content-Disposition', ''), r'placeholder\.png')
 
     def test_portal_message_fetch(self):
-        """Test retrieving chatter messages through the portal controllers"""
+        """Test retrieving chatter messages through the portal controller"""
         self.authenticate(None, None)
         message_fetch_url = '/mail/chatter_fetch'
 
@@ -160,7 +160,7 @@ class TestPortalControllers(TestPortal):
         self.assertEqual(get_chatter_message_count(), 5)
 
     def test_portal_share_comment(self):
-        """ Test posting through portal controllers allowing to use a hash to
+        """ Test posting through portal controller allowing to use a hash to
         post wihtout access rights. """
         self.authenticate(None, None)
         post_url = f"{self.record_portal.get_base_url()}/mail/chatter_post"

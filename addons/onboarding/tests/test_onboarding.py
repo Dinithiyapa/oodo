@@ -95,7 +95,7 @@ class TestOnboarding(TestOnboardingCommon):
         # Updating onboarding (and steps) to per-company
         self.onboarding_1_step_1.is_per_company = True
 
-        # Required after progress reset (simulate role of controllers)
+        # Required after progress reset (simulate role of controller)
         self.onboarding_1._search_or_create_progress()
 
         self.onboarding_1_step_1.action_set_just_done()
@@ -137,7 +137,7 @@ class TestOnboarding(TestOnboardingCommon):
         # Updating onboarding step 1 to per-company
         self.onboarding_1_step_1.is_per_company = True
         self.assertTrue(self.onboarding_1.is_per_company)
-        # Required after progress reset (simulate role of controllers)
+        # Required after progress reset (simulate role of controller)
         self.onboarding_1._search_or_create_progress()
 
         self.assert_onboarding_is_not_done(self.onboarding_1)
@@ -175,7 +175,7 @@ class TestOnboarding(TestOnboardingCommon):
         """
         # Updating onboarding to per-company
         self.onboarding_1_step_1.is_per_company = True
-        # Create an onboarding_progress (simulate role of controllers)
+        # Create an onboarding_progress (simulate role of controller)
         self.onboarding_1._search_or_create_progress()
 
         with self.assertRaises(IntegrityError):

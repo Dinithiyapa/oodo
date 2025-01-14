@@ -1155,8 +1155,8 @@ msgstr "Et kort er en fleksible og extensibel indholds container. Den inkludere 
 #: model:ir.model.fields,help:website.field_base_automation__website_published
 #: model:ir.model.fields,help:website.field_ir_actions_server__website_published
 #: model:ir.model.fields,help:website.field_ir_cron__website_published
-msgid "A code server action can be executed from the website, using a dedicated controllers. The address is <base>/website/action/<website_path>. Set this field as True to allow users to run this action. If it is set to False the action cannot be run through the website."
-msgstr "En kode server handling kan udføres fra hjemmesiden, ved hjælp af en dedikeret controllers. Adressen er <base>/website/action/<website_path>. Angiv dette felt som True for at give brugerne mulighed for at køre denne handling. Hvis den er sat til False, kan handlingen ikke køres gennem hjemmesiden."
+msgid "A code server action can be executed from the website, using a dedicated controller. The address is <base>/website/action/<website_path>. Set this field as True to allow users to run this action. If it is set to False the action cannot be run through the website."
+msgstr "En kode server handling kan udføres fra hjemmesiden, ved hjælp af en dedikeret controller. Adressen er <base>/website/action/<website_path>. Angiv dette felt som True for at give brugerne mulighed for at køre denne handling. Hvis den er sat til False, kan handlingen ikke køres gennem hjemmesiden."
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_color_blocks_2
@@ -9281,16 +9281,16 @@ msgid ""
 "\n"
 "        301 Moved permanently: The browser will keep in cache the new url.\n"
 "        302 Moved temporarily: The browser will not keep in cache the new url and ask again the next time the new url.\n"
-"        404 Not Found: If you want remove a specific page/controllers (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
-"        308 Redirect / Rewrite: If you want rename a controllers with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
+"        404 Not Found: If you want remove a specific page/controller (e.g. Ecommerce is installed, but you don't want /shop on a specific website)\n"
+"        308 Redirect / Rewrite: If you want rename a controller with a new url. (Eg: /shop -> /garden - Both url will be accessible but /shop will automatically be redirected to /garden)\n"
 "    "
 msgstr ""
 "Type af omdirigering/omskrivelse:\n"
 "\n"
 "301 Flyttet permanent: Browseren vil bibeholde den nye URL i cache.\n"
 "302 Flyttet midlertidigt: Browseren vil ikke bibeholde den nye URL i cache, og spørger igen efter den nye URL næste gang.\n"
-"404 Ikke fundet: Hvis du vil fjerne en specifik side/controllers (f.eks. hvis Ecommerce er installeret, men du vil ikke have /shop på en specifik hjemmeside)\n"
-"308 Omdiriger / omskriv: Hvis du vil omdøbe en controllers med et nyt URL. (F.eks. /shop -> /garden - Begge URL vil være tilgængelige, men /shop vil automatisk omdirigere til /garden)"
+"404 Ikke fundet: Hvis du vil fjerne en specifik side/controller (f.eks. hvis Ecommerce er installeret, men du vil ikke have /shop på en specifik hjemmeside)\n"
+"308 Omdiriger / omskriv: Hvis du vil omdøbe en controller med et nyt URL. (F.eks. /shop -> /garden - Begge URL vil være tilgængelige, men /shop vil automatisk omdirigere til /garden)"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_countdown_options

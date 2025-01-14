@@ -251,14 +251,14 @@ class TestWebsitePerformance(TestWebsitePerformanceCommon):
                 savepoint.rollback()
 
     def test_20_perf_sql_queries_homepage(self):
-        # homepage "/" has its own controllers
+        # homepage "/" has its own controller
         for readonly_enabled in (True, False):
             self.env.registry.test_readonly_enabled = readonly_enabled
             with self.subTest(readonly=readonly_enabled), self.env.cr.savepoint() as savepoint:
                 select_tables_perf = {
                     'base_registry_signaling': 1,
                     'website_menu': 1,
-                    # homepage controllers is prefetching all menus for perf in one go
+                    # homepage controller is prefetching all menus for perf in one go
                     'website_page': 2,
                     # 1. the menu prefetching is also prefetching all menu's pages
                     # 2. find page matching the `/` url

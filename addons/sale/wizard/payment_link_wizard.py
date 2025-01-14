@@ -43,7 +43,7 @@ class PaymentLinkWizard(models.TransientModel):
         if self.res_model != 'sale.order':
             return res
 
-        # Order-related fields are retrieved in the controllers
+        # Order-related fields are retrieved in the controller
         return {
             'sale_order_id': self.res_id,
         }

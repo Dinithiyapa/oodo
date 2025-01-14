@@ -161,11 +161,11 @@ test("soft_reload will refresh data", async () => {
     expect.verifySteps(["web_search_read"]);
 });
 
-test("soft_reload when there is no controllers", async () => {
+test("soft_reload when there is no controller", async () => {
     await mountWithCleanup(WebClient);
     await getService("action").doAction("soft_reload");
     expect(true).toBe(true, {
-        message: "No ControllerNotFoundError when there is no controllers to restore",
+        message: "No ControllerNotFoundError when there is no controller to restore",
     });
 });
 

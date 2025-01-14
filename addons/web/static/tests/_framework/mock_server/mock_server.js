@@ -640,7 +640,7 @@ export class MockServer {
             }
         }
 
-        // There was a matching controllers that wasn't call_kw but it didn't return anything: treat it as JSON
+        // There was a matching controller that wasn't call_kw but it didn't return anything: treat it as JSON
         return { error: null, result };
     }
 

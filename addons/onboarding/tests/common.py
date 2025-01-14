@@ -50,7 +50,7 @@ class TestOnboardingCommon(TransactionCaseOnboarding):
             'is_per_company': False,
             'panel_step_open_action_name': 'action_fake_open_onboarding_step',
         }])
-        # Create progress records as would happen through the controllers
+        # Create progress records as would happen through the controller
         (cls.onboarding_1 + cls.onboarding_2).with_company(cls.company_1)._search_or_create_progress()
 
     def activate_company(self, company):

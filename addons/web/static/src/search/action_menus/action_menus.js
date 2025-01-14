@@ -130,7 +130,7 @@ export class ActionMenus extends Component {
     /**
      * Handler used to determine which way must be used to execute a selected
      * action: it will be either:
-     * - a callback (function given by the view controllers);
+     * - a callback (function given by the view controller);
      * - an action ID (string);
      * - an URL (string).
      * @private
