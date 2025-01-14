@@ -42,7 +42,7 @@ class TestCertificationFlow(common.TestSurveyCommon, HttpCase):
         """ Check that the resume line is correctly created upon certification completion.
 
         As we test the method "survey.user_input._mark_done" which is called in sudo from
-        the controllers, the test is executed with the admin user.
+        the controller, the test is executed with the admin user.
         """
         ResumeLine = self.env['hr.resume.line']
         user_input_vals = {

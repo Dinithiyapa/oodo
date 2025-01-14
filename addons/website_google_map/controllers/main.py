@@ -11,7 +11,7 @@ class GoogleMap(http.Controller):
     '''
     This class generates on-the-fly partner maps that can be reused in every
     website page. To do so, just use an ``<iframe ...>`` whose ``src``
-    attribute points to ``/google_map`` (this controllers generates a complete
+    attribute points to ``/google_map`` (this controller generates a complete
     HTML5 page).
 
     URL query parameters:

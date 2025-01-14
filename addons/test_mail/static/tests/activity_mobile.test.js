@@ -5,7 +5,7 @@ import { openView, start, startServer } from "@mail/../tests/mail_test_helpers";
 describe.current.tags("mobile");
 defineTestMailModels();
 
-test("horizontal scroll applies only to the content, not to the whole controllers", async () => {
+test("horizontal scroll applies only to the content, not to the whole controller", async () => {
     const pyEnv = await startServer();
     pyEnv["mail.activity.type"].create([
         { name: "Email" },

@@ -112,7 +112,7 @@ class PosPaymentMethod(models.Model):
             If there isn't any, try to find an existing one in the same company and return it without adding the pos.config to it.
             If there is not, create a new one for the company and return it without adding the pos.config to it.
         """
-        # Parameters are ids instead of a pos.config record because this method can be called from a web controllers or internally
+        # Parameters are ids instead of a pos.config record because this method can be called from a web controller or internally
         payment_method_id = self.env['pos.payment.method'].search([('is_online_payment', '=', True), ('company_id', '=', company_id), ('config_ids', 'in', pos_config_id)], limit=1).exists()
         if not payment_method_id:
             payment_method_id = self.env['pos.payment.method'].search([('is_online_payment', '=', True), ('company_id', '=', company_id)], limit=1).exists()

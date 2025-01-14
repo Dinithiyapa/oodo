@@ -160,7 +160,7 @@ def url_localized(url=None, lang_code=None, canonical_domain=None, prefetch_lang
     url, sep, qs = url.partition('?')
 
     try:
-        # Re-match the controllers where the request path routes.
+        # Re-match the controller where the request path routes.
         rule, args = request.env['ir.http']._match(url)
         for key, val in list(args.items()):
             if isinstance(val, models.BaseModel):
@@ -262,7 +262,7 @@ def url_for(url_from, lang_code=None):
 def is_multilang_url(local_url, lang_url_codes=None):
     ''' Check if the given URL content is supposed to be translated.
         To be considered as translatable, the URL should either:
-        1. Match a POST (non-GET actually) controllers that is `website=True` and
+        1. Match a POST (non-GET actually) controller that is `website=True` and
            either `multilang` specified to True or if not specified, with `type='http'`.
         2. If not matching 1., everything not under /static/ or /web/ will be translatable
     '''

@@ -43,7 +43,7 @@
     <!--
         Display static star widget, and open rating composer on click
         This template provide the container of the Popup Rating Composer. The rest is done in js.
-        To use this template, you need to call it after setting the following variable in your template or in your controllers:
+        To use this template, you need to call it after setting the following variable in your template or in your controller:
             :float rating_avg : average rating to be displayed with star widget
             :object browserecord : the mail_thread object
             :token string (optional): if you want your chatter to be available for non-logged user,

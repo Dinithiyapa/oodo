@@ -15,10 +15,10 @@ from odoo.addons.portal.controllers import portal
 
 class PaymentPortal(portal.CustomerPortal):
 
-    """ This controllers contains the foundations for online payments through the portal.
+    """ This controller contains the foundations for online payments through the portal.
 
     It allows to complete a full payment flow without the need of going through a document-based
-    flow made available by another module's controllers.
+    flow made available by another module's controller.
 
     Such controllers should extend this one to gain access to the _create_transaction static method
     that implements the creation of a transaction before its processing, or to override specific

@@ -58,7 +58,7 @@ export class PropertiesField extends Component {
             unfoldedSeparators: this._getUnfoldedSeparators(),
         });
 
-        // Properties can be added from the cogmenu of the form controllers
+        // Properties can be added from the cogmenu of the form controller
         if (this.env.config?.viewType === "form") {
             useBus(this.env.model.bus, "PROPERTY_FIELD:ADD_PROPERTY_VALUE", () => {
                 this.onPropertyCreate();

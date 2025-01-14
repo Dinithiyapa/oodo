@@ -16995,14 +16995,14 @@ class MessageHandler {
         });
         break;
       case StreamKind.ENQUEUE:
-        (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.assert)(streamController, "enqueue should have stream controllers");
+        (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.assert)(streamController, "enqueue should have stream controller");
         if (streamController.isClosed) {
           break;
         }
         streamController.controller.enqueue(data.chunk);
         break;
       case StreamKind.CLOSE:
-        (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.assert)(streamController, "close should have stream controllers");
+        (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.assert)(streamController, "close should have stream controller");
         if (streamController.isClosed) {
           break;
         }
@@ -17011,7 +17011,7 @@ class MessageHandler {
         this.#deleteStreamController(streamController, streamId);
         break;
       case StreamKind.ERROR:
-        (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.assert)(streamController, "error should have stream controllers");
+        (0,_util_js__WEBPACK_IMPORTED_MODULE_0__.assert)(streamController, "error should have stream controller");
         streamController.controller.error(wrapReason(data.reason));
         this.#deleteStreamController(streamController, streamId);
         break;

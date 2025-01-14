@@ -11232,7 +11232,7 @@ msgstr "Steuerungsknöpfe"
 #. module: web
 #. odoo-javascript
 #: code:addons/web/static/src/core/emoji_picker/emoji_data.js:0
-msgid "controllers"
+msgid "controller"
 msgstr "Controller"
 
 #. module: web

@@ -5,7 +5,7 @@ import { useService } from "@web/core/utils/hooks";
 import { formView } from "@web/views/form/form_view";
 
 /**
- * This controllers is overridden to allow configuring sale_order_lines through a popup
+ * This controller is overridden to allow configuring sale_order_lines through a popup
  * window when a service product linked to events is selected.
  *
  * This allows keeping an editable list view for sales order and remove the noise of

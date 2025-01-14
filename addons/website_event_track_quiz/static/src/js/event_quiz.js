@@ -302,7 +302,7 @@ publicWidget.registry.Quiz = publicWidget.Widget.extend({
     /**
      * Extract data from exiting DOM rendered server-side, to have the list of questions with their
      * relative answers.
-     * This method should return the same format as /gamification_quiz/quiz/get controllers.
+     * This method should return the same format as /gamification_quiz/quiz/get controller.
      *
      * @return {Array<Object>} list of questions with answers
      */

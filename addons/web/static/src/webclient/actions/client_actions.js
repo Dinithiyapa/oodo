@@ -83,7 +83,7 @@ async function reloadContext(env, action) {
 registry.category("actions").add("reload_context", reloadContext);
 
 /**
- * Client action to restore the current controllers
+ * Client action to restore the current controller
  * Serves as a trigger to reload the interface without a full browser reload
  */
 async function softReload(env, action) {

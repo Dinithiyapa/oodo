@@ -40,7 +40,7 @@ class SurveyQuestion(models.Model):
         - These "page_ids" still have question_ids (questions located between this page and the next)
         - These "question_ids" still have a "page_id"
 
-        That makes the use and display of these information at view and controllers levels easier to understand.
+        That makes the use and display of these information at view and controller levels easier to understand.
     """
     _name = 'survey.question'
     _description = 'Survey Question'

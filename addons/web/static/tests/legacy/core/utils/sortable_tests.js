@@ -321,7 +321,7 @@ QUnit.module("Draggable", ({ beforeEach }) => {
         }
         await mount(List, target);
 
-        const controller = target.querySelector(".controllers");
+        const controller = target.querySelector(".controller");
         const content = target.querySelector(".content");
         const renderer = target.querySelector(".renderer");
 

@@ -38,7 +38,7 @@ class WebsiteForm(http.Controller):
         try:
             # The except clause below should not let what has been done inside
             # here be committed. It should not either roll back everything in
-            # this controllers method. Instead, we use a savepoint to roll back
+            # this controller method. Instead, we use a savepoint to roll back
             # what has been done inside the try clause.
             with request.env.cr.savepoint():
                 if request.env['ir.http']._verify_request_recaptcha_token('website_form'):

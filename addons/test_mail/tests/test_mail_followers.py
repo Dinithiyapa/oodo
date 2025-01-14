@@ -859,7 +859,7 @@ class UnfollowFromInboxTest(MailCommon):
         cls.user_employee.write({'notification_type': 'inbox'})
 
     def _fetch_inbox_message(self, message_id, user=None):
-        """Fetch the given message similarly to the controllers."""
+        """Fetch the given message similarly to the controller."""
         MailMessage = self.env["mail.message"].with_user(user) if user else self.env["mail.message"]
         messages = MailMessage._message_fetch(domain=[("needaction", "=", True)])["messages"]
         return list(

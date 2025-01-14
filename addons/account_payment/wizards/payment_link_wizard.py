@@ -20,7 +20,7 @@ class PaymentLinkWizard(models.TransientModel):
         if self.res_model != 'account.move':
             return res
 
-        # Invoice-related fields are retrieved in the controllers.
+        # Invoice-related fields are retrieved in the controller.
         return {
             'invoice_id': self.res_id,
         }
