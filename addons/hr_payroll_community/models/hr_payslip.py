@@ -111,6 +111,7 @@ class HrPayslip(models.Model):
     payslip_count = fields.Integer(compute='_compute_payslip_count',
                                    string="Payslip Computation Details",
                                    help="Set Payslip Count")
+    worked_days = fields.Float(string='Worked Days', compute='_compute_worked_days', store=True)
 
     def _compute_details_by_salary_rule_category_ids(self):
         """Compute function for Salary Rule Category for getting
@@ -309,6 +310,21 @@ class HrPayslip(models.Model):
                             += c_leaves[item]['hours'] / work_hours
             res.extend(leaves.values())
         return res
+
+    @api.depends('employee_id')
+    def _compute_worked_days(self):
+        for record in self:
+            if record.employee_id:
+                print(f"Employee ID from Payslip: {record.employee_id.id}")
+
+                # Fetch the `payslip.employee.attendance` model
+                attendance_model = self.env['payslip.employee.attendance']
+
+                # Pass the `employee_id` explicitly
+                record.worked_days = attendance_model._compute_working_days(record.employee_id.id)
+            else:
+                record.worked_days = 0  # Default value
+                print("No employee found, default worked_days: 0")
 
     @api.model
     def get_inputs(self, contracts, date_from, date_to):

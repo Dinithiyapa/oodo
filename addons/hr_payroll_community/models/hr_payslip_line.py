@@ -61,6 +61,7 @@ class HrPayslipLine(models.Model):
         for line in self:
             line.total = float(line.quantity) * line.amount * line.rate / 100
 
+
     @api.model_create_multi
     def create(self, vals_list):
         """Function for change value at the time of creation"""
