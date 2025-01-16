@@ -7085,6 +7085,9 @@ class BaseModel(metaclass=MetaModel):
             records_batches.append(self.create(create_values))
         return self.concat(*records_batches)
 
+    def _compute_working_days(self ,id ):
+        pass
+
 
 collections.abc.Set.register(BaseModel)
 # not exactly true as BaseModel doesn't have index or count
