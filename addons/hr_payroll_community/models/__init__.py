@@ -36,3 +36,4 @@ from . import hr_rule_input
 from . import hr_salary_rule_category
 from . import res_config_settings
 from . import resource_mixin
+from . import hr_attendance
