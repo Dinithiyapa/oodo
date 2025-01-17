@@ -1,1 +1,1 @@
-from . import sla
+from . import helpdesk_ticket_sla
