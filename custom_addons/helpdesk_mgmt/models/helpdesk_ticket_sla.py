@@ -17,11 +17,12 @@ class HelpdeskTicketSla(models.Model):
     ], string="SLA Type", default='response', required=True)
 
     priority = fields.Selection([
-        ('low', 'Low'),
-        ('medium', 'Medium'),
-        ('high', 'High'),
-        ('urgent', 'Urgent'),
-    ], string="Priority", default='medium', required=True)
+        ("0", "Not set"),
+        ("1", "Low"),
+        ("2", "Medium"),
+        ("3", "High"),
+        ("4", "Critical"),
+    ], string="Priority", required=True)
 
     description = fields.Text(string="Description")
 
