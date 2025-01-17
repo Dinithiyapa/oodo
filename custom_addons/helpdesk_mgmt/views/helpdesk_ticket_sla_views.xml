@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- Search View for Ticket SLA -->
     <record id="view_helpdesk_ticket_tag_search" model="ir.ui.view">
         <field name="name">helpdesk.ticket.sla.search</field>
         <field name="model">helpdesk.ticket.sla</field>
@@ -15,17 +16,17 @@
             </search>
         </field>
     </record>
+
+    <!-- Form View for Ticket SLA -->
     <record id="view_helpdesk_ticket_sla_form" model="ir.ui.view">
         <field name="name">helpdesk.ticket.sla.form</field>
         <field name="model">helpdesk.ticket.sla</field>
         <field name="arch" type="xml">
-            <form string="SLA">
+            <form string="Service Level Agreement">
                 <header>
                 </header>
                 <sheet>
-                    <field name="active" invisible="1" />
-                    <div class="oe_button_box" name="button_box">
-                    </div>
+                    <div class="oe_button_box" name="button_box" />
                     <widget
                         name="web_ribbon"
                         title="Archived"
@@ -33,26 +34,42 @@
                         invisible="active"
                     />
                     <div class="oe_title">
-                        <label for="name" class="oe_edit_only" />
+                        <label for="name" class="oe_edit_only"/>
                         <h1>
-                            <field name="name" required="1" />
+                            <field name="name" required="1"/>
                         </h1>
                     </div>
-                    <group name="main">
-                        <field name="color" widget="color_picker" />
+                    <!-- Section for SLA Details -->
+                    <group name="main" col="2">
+                        <group name="sla_info">
+                            <field name="sla_type" widget="selection" string="Type" />
+                            <field name="priority" widget="selection" string="Priority" />
+                        </group>
+
+                        <group name="dates">
+                            <field name="time_to_resolve" string="Time to Resolve (hours)" />
+                            <field name="time_to_respond" string="Time to Respond (hours)" />
+                        </group>
+                    </group>
+                    <!-- Section for SLA Status and Description -->
+                    <group name="sla_status">
+                        <field name="description" widget="html" string="Description" />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-    <record id="view_helpdesk_ticket_tag_tree" model="ir.ui.view">
+
+    <!-- Tree View for Ticket SLA -->
+    <record id="view_helpdesk_ticket_sla_tree" model="ir.ui.view">
         <field name="name">helpdesk.ticket.sla.tree</field>
         <field name="model">helpdesk.ticket.sla</field>
         <field name="arch" type="xml">
-            <tree decoration-muted="not active" editable="bottom">
+            <tree decoration-muted="not active">
                 <field name="name" />
-                <field name="color" widget="color_picker" />
-                <field name="active" column_invisible="1" />
+                <field name="active" widget="boolean" />
+                <field name="sla_type" />
+                <field name="priority" />
             </tree>
         </field>
     </record>
