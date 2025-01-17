@@ -133,7 +133,21 @@ class HelpdeskTicket(models.Model):
     sla_id = fields.Many2one(
         comodel_name="helpdesk.ticket.sla",
         string="SLA Policy",
+        compute="_compute_sla_id",
+        store=True,
     )
+
+    @api.depends('priority')
+    def _compute_sla_id(self):
+        for ticket in self:
+            if ticket.priority:
+                sla = self.env['helpdesk.ticket.sla'].search(
+                    [('priority', '=', ticket.priority)],
+                    limit=1
+                )
+                ticket.sla_id = sla.id if sla else None
+                print("SLA updated based on priority:", ticket.priority)
+
     @api.depends("name")
     def _compute_display_name(self):
         for ticket in self:
