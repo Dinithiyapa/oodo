@@ -49,8 +49,8 @@
         <field name="res_model">helpdesk.ticket.tag</field>
         <field name="view_mode">tree,form</field>
     </record>
-     <record id="helpdesk_ticket_sla_action" model="ir.actions.act_window">
-        <field name="name">Ticket SLA</field>
+    <record id="helpdesk_ticket_sla_action" model="ir.actions.act_window">
+        <field name="name">SLA</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">helpdesk.ticket.sla</field>
         <field name="view_mode">tree,form</field>
