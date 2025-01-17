@@ -173,6 +173,8 @@
                             <field name="user_ids" invisible="1" readonly="1"/>
                             <field name="user_id" options='{"always_reload": True}'/>
                             <field name="priority" widget="priority"/>
+                            <field name="sla_id" options='{"always_reload": True}'/>
+
                             <field
                                     name="company_id"
                                     options="{'no_create': True}"
@@ -204,6 +206,9 @@
                                 <field name="assigned_date" readonly="1"/>
                                 <field name="closed_date" readonly="1"/>
                             </group>
+                        </page>
+                        <page string="Service Level Agreement" name="sla_info">
+
                         </page>
                     </notebook>
                 </sheet>
