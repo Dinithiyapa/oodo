@@ -173,7 +173,7 @@
                             <field name="user_ids" invisible="1" readonly="1"/>
                             <field name="user_id" options='{"always_reload": True}'/>
                             <field name="priority" widget="priority"/>
-                            <field name="sla_id" options='{"always_reload": True}'/>
+                            <field name="sla_id" string="SLA Policy" options='{"always_reload": True}'/>
 
                             <field
                                     name="company_id"
