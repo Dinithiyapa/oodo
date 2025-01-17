@@ -42,7 +42,7 @@
                 <filter
                         string="High Priority"
                         name="high_priority"
-                        domain="[('priority','=','3')]"
+                        domain="[('priority','=','4')]"
                 />
                 <separator/>
                 <filter
@@ -172,7 +172,9 @@
                             <field name="team_id" options='{"always_reload": True}'/>
                             <field name="user_ids" invisible="1" readonly="1"/>
                             <field name="user_id" options='{"always_reload": True}'/>
-                            <field name="priority" widget="priority"/>
+                            <field name="priority" widget="priority" onchange="_onchange_priority"/>
+                            <field name="sla_id" string="SLA Policy"/>
+
                             <field
                                     name="company_id"
                                     options="{'no_create': True}"

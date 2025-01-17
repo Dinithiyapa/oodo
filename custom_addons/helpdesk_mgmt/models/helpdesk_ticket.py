@@ -99,14 +99,16 @@ class HelpdeskTicket(models.Model):
         string="Team",
         index=True,
     )
+
     priority = fields.Selection(
         selection=[
-            ("0", "Low"),
-            ("1", "Medium"),
-            ("2", "High"),
-            ("3", "Very High"),
+            ("0", "Not set"),
+            ("1", "Low"),
+            ("2", "Medium"),
+            ("3", "High"),
+            ("4", "Critical"),
         ],
-        default="1",
+        default="0",
     )
     attachment_ids = fields.One2many(
         comodel_name="ir.attachment",
@@ -128,6 +130,23 @@ class HelpdeskTicket(models.Model):
         help="Gives the sequence order when displaying a list of tickets.",
     )
     active = fields.Boolean(default=True)
+    sla_id = fields.Many2one(
+        comodel_name="helpdesk.ticket.sla",
+        string="SLA Policy",
+        compute="_compute_sla_id",
+        store=True,
+    )
+
+    @api.depends('priority')
+    def _compute_sla_id(self):
+        for ticket in self:
+            if ticket.priority:
+                sla = self.env['helpdesk.ticket.sla'].search(
+                    [('priority', '=', ticket.priority)],
+                    limit=1
+                )
+                ticket.sla_id = sla.id if sla else None
+                print("SLA updated based on priority:", ticket.priority)
 
     @api.depends("name")
     def _compute_display_name(self):

@@ -3,9 +3,9 @@
     'author': 'WireApps',
     'version': '1.0',
     'category': 'Help Desk',
-    'depends': ['base','web'],
+    'depends': ['base','web' ,'helpdesk_mgmt'],
     "data": [
-        "views/sla.xml",
+        "views/helpdesk_ticket_sla_view.xml",
     ],
     'installable': True,
     'auto_install': False,
